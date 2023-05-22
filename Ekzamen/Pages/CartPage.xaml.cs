@@ -28,7 +28,7 @@ namespace Ekzamen.Pages
         private readonly User _user;
         public CartPage()
         {
-            _user = _db.Users.FirstOrDefault();
+            _user = _db.Users.Where(p => p.Id == DataLogin.Id).FirstOrDefault(); ;
             Order = new Order() { User = _user };
             InitializeComponent();
 
